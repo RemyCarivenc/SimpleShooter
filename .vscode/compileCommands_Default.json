@@ -1,0 +1,27 @@
+[
+	{
+		"file": "C:\\Users\\booba\\Documents\\Unreal Projects\\SimpleShooter\\SimpleShooter\\Source\\SimpleShooter\\SimpleShooter.Build.cs",
+		"command": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.33.31629\\bin\\HostX64\\x64\\cl.exe\" @\"C:\\Users\\booba\\Documents\\Unreal Projects\\SimpleShooter\\SimpleShooter\\.vscode\\compileCommands_Default\\SimpleShooter.211.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.0\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\booba\\Documents\\Unreal Projects\\SimpleShooter\\SimpleShooter\\Source\\SimpleShooter\\SimpleShooter.cpp",
+		"command": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.33.31629\\bin\\HostX64\\x64\\cl.exe\" @\"C:\\Users\\booba\\Documents\\Unreal Projects\\SimpleShooter\\SimpleShooter\\.vscode\\compileCommands_Default\\SimpleShooter.211.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.0\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\booba\\Documents\\Unreal Projects\\SimpleShooter\\SimpleShooter\\Source\\SimpleShooter\\SimpleShooter.h",
+		"command": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.33.31629\\bin\\HostX64\\x64\\cl.exe\" @\"C:\\Users\\booba\\Documents\\Unreal Projects\\SimpleShooter\\SimpleShooter\\.vscode\\compileCommands_Default\\SimpleShooter.211.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.0\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\booba\\Documents\\Unreal Projects\\SimpleShooter\\SimpleShooter\\Source\\SimpleShooter\\SimpleShooterGameModeBase.cpp",
+		"command": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.33.31629\\bin\\HostX64\\x64\\cl.exe\" @\"C:\\Users\\booba\\Documents\\Unreal Projects\\SimpleShooter\\SimpleShooter\\.vscode\\compileCommands_Default\\SimpleShooter.211.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.0\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\booba\\Documents\\Unreal Projects\\SimpleShooter\\SimpleShooter\\Source\\SimpleShooter\\SimpleShooterGameModeBase.h",
+		"command": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.33.31629\\bin\\HostX64\\x64\\cl.exe\" @\"C:\\Users\\booba\\Documents\\Unreal Projects\\SimpleShooter\\SimpleShooter\\.vscode\\compileCommands_Default\\SimpleShooter.211.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.0\\Engine\\Source"
+	}
+]
