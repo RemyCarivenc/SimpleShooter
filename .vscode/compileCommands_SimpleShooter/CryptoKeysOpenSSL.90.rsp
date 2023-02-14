@@ -1,5 +1,5 @@
 /FI "C:\Program Files\Epic Games\UE_5.0\Engine\Plugins\Editor\CryptoKeys\Intermediate\Build\Win64\UnrealEditor\Development\CryptoKeysOpenSSL\Definitions.CryptoKeysOpenSSL.h" 
-/FI "C:\Users\booba\Documents\Unreal Projects\SimpleShooter\SimpleShooter\Intermediate\Build\Win64\SimpleShooterEditor\Development\Core\SharedPCH.Core.ShadowErrors.h" 
+/FI "C:\Users\booba\Documents\Unreal Projects\SimpleShooter\Intermediate\Build\Win64\SimpleShooterEditor\Development\Core\SharedPCH.Core.ShadowErrors.h" 
 /I "C:\Program Files\Epic Games\UE_5.0\Engine\Source" 
 /I "C:\Program Files\Epic Games\UE_5.0\Engine\Source\ThirdParty" 
 /I "C:\Program Files\Epic Games\UE_5.0\Engine\Source\ThirdParty\OpenSSL\1.1.1k\include\Win64\VS2015" 
