@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "ShooterCharacter.h"
+#include "Gun.h"
 
 // Sets default values
 AShooterCharacter::AShooterCharacter()
@@ -13,6 +14,11 @@ AShooterCharacter::AShooterCharacter()
 void AShooterCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+
+	gun = GetWorld()->SpawnActor<AGun>(gunClass);
+	GetMesh()->HideBoneByName("weapon_r", EPhysBodyOp::PBO_None);
+	gun->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, "WeaponSocket");
+	gun->SetOwner(this);
 }
 
 // Called every frame
@@ -54,4 +60,3 @@ void AShooterCharacter::LookRightRate(float AxisValue)
 {
 	AddControllerYawInput(AxisValue * rotationRate * GetWorld()->GetDeltaSeconds());
 }
-
