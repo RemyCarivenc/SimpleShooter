@@ -22,11 +22,18 @@ protected:
 	virtual void BeginPlay() override;
 
 public:	
+
+	UFUNCTION(BlueprintPure)
+	bool IsDead() const;
+
+
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, AActor* DamageCauser) override;
 
 private:
 	void MoveForward(float AxisValue);
@@ -37,6 +44,11 @@ private:
 
 	UPROPERTY(EditAnywhere)
 	float rotationRate = 10;
+	UPROPERTY(EditDefaultsOnly)
+	float maxHealt = 100;
+
+	UPROPERTY(VisibleAnywhere)
+	float health;
 
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<AGun> gunClass;

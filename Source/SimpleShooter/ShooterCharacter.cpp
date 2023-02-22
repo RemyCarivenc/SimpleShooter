@@ -15,10 +15,17 @@ void AShooterCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 
+	health = maxHealt;
+
 	gun = GetWorld()->SpawnActor<AGun>(gunClass);
 	GetMesh()->HideBoneByName("weapon_r", EPhysBodyOp::PBO_None);
 	gun->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, "WeaponSocket");
 	gun->SetOwner(this);
+}
+
+bool AShooterCharacter::IsDead() const
+{
+	return health <=0;
 }
 
 // Called every frame
@@ -40,6 +47,16 @@ void AShooterCharacter::SetupPlayerInputComponent(UInputComponent *PlayerInputCo
 	PlayerInputComponent->BindAxis("LookRightRate", this, &AShooterCharacter::LookRightRate);
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	PlayerInputComponent->BindAction("Shoot", IE_Pressed, this, &AShooterCharacter::Shoot);
+}
+
+float AShooterCharacter::TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, AActor* DamageCauser)
+{
+	float damageToApplied = Super::TakeDamage(DamageAmount,DamageEvent,EventInstigator,DamageCauser);
+	damageToApplied = FMath::Min(health, damageToApplied);
+	health -= damageToApplied;
+	UE_LOG(LogTemp, Error, TEXT("Health %f"), health);
+
+	return damageToApplied;
 }
 
 void AShooterCharacter::MoveForward(float AxisValue)
