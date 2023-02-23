@@ -3,6 +3,7 @@
 #include "ShooterCharacter.h"
 #include "Gun.h"
 #include "Components/CapsuleComponent.h"
+#include "SimpleShooterGameModeBase.h"
 
 // Sets default values
 AShooterCharacter::AShooterCharacter()
@@ -26,7 +27,7 @@ void AShooterCharacter::BeginPlay()
 
 bool AShooterCharacter::IsDead() const
 {
-	return health <=0;
+	return health <= 0;
 }
 
 // Called every frame
@@ -50,14 +51,20 @@ void AShooterCharacter::SetupPlayerInputComponent(UInputComponent *PlayerInputCo
 	PlayerInputComponent->BindAction("Shoot", IE_Pressed, this, &AShooterCharacter::Shoot);
 }
 
-float AShooterCharacter::TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, AActor* DamageCauser)
+float AShooterCharacter::TakeDamage(float DamageAmount, struct FDamageEvent const &DamageEvent, class AController *EventInstigator, AActor *DamageCauser)
 {
-	float damageToApplied = Super::TakeDamage(DamageAmount,DamageEvent,EventInstigator,DamageCauser);
+	float damageToApplied = Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
 	damageToApplied = FMath::Min(health, damageToApplied);
 	health -= damageToApplied;
 
-	if(IsDead())
+	if (IsDead())
 	{
+		ASimpleShooterGameModeBase *gameMode = GetWorld()->GetAuthGameMode<ASimpleShooterGameModeBase>();
+		if (gameMode != nullptr)
+		{
+			gameMode->PawnKilled(this);
+		}
+		
 		DetachFromControllerPendingDestroy();
 		GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 	}
